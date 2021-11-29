@@ -1,0 +1,372 @@
+.timeline {
+  div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font-size: inherit;
+    color: inherit;
+    box-sizing: border-box;
+  }
+  img {
+    vertical-align: top;
+  }
+  .white-p {
+    @include white-p();
+  }
+  .white-p1 {
+    @include white-p();
+    font-size: 65px;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+  }
+  .white-p2 {
+    @include white-p();
+    font-size: 50px;
+    font-weight: 900;
+  }
+  .white-p3 {
+    @include white-p();
+    font-size: 44px;
+    font-weight: 600;
+  }
+  .white-p4 {
+    @include white-p();
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .white-p5 {
+    @include white-p();
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+.l-wrap {
+  overflow: visible;
+  position: relative;
+}
+
+.timeline {
+  height: 100%;
+  .l-container-wrap {
+    height: 100%;
+    word-break: break-all;
+  }
+  .l-container {
+    position: relative;
+    height: 100%;
+  }
+  .timeline-wrap {
+    height: 100%;
+  }
+  .timeline-inner {
+    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+  }
+  .section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .overlay {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background-color: #000000B3;
+      opacity: 0.5;
+    }
+    .main-section {
+      $header-height: 110px;
+      height: calc(100vh - $header-height);
+      min-height: calc(100vh - $header-height);
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+      background-color: #fff;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      .white-p3 {
+        margin-bottom: 15px;
+      }
+      .section-inner {
+        max-width: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        @include center-child();
+        .intro-txt {
+          display: flex;
+          width: 100%;
+          text-align: left;
+          padding-left: 40px;
+          &.reverse {
+            flex-direction: row-reverse;
+          }
+          & > .l-left,
+          & > .l-right {
+            flex: 1;
+          }
+        }
+      }
+      &.age1922 {
+        background-image: url(assets/1922-main.jpeg);
+      }
+      &.age1950 {
+        background-image: url(assets/1950-main.jpeg);
+      }
+      &.age1970 {
+        background-image: url(assets/1970-main.jpeg);
+      }
+      &.age1996 {
+        background-image: url(assets/1996-main.jpeg);
+      }
+      &.age2009 {
+        background-image: url(assets/2009-main.jpeg);
+      }
+      &.age2011 {
+        background-image: url(assets/2011-main.jpeg);
+      }
+      &.age2016 {
+        background-image: url(assets/2016-main.jpeg);
+      }
+      &.age2022 {
+        background-image: url(assets/2022-main.jpeg);
+      }
+    }
+    .sub-section {
+      padding: 0;
+      width: 100%;
+      height: auto;
+      min-height: 1000px;
+      position: relative;
+      box-sizing: border-box;
+      background-color: #fff;
+      .title-area {
+        padding-top: 100px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      &[class*=age] {
+        padding: 0;
+      }
+      &.left {
+        .year-desc-wrap {
+          text-align: left;
+          padding: 0 0 0 50px;
+          border-left: 1px solid gray;
+          li {
+            .dot-line {
+              left: -205px;
+            }
+            .dot {
+              left: -54px;
+              &:before {
+                left: -7px;
+              }
+            }
+            .new-progress {
+              left: -51px;
+            }
+            .desc {
+              padding-right: 15px;
+            }
+          }
+        }
+        .line {
+          left: 15px;
+        }
+        .teacher {
+          right: 6%;
+        }
+      }
+      &.right {
+        .info-wrap {
+          .scrollbar-inner {
+            flex-direction: row-reverse;
+          }
+        }
+        .year-desc-wrap {
+          text-align: right;
+          padding: 0 50px 0 0;
+          border-right: 1px solid #aaaaaa;
+          li {
+            flex-direction: row-reverse;
+            .dot {
+              right: -54px;
+              &:before {
+                right: -7px;
+              }
+            }
+            .new-progress {
+              right: -51px;
+            }
+            .desc {
+              padding-left: 15px;
+            }
+            .dot-line {
+              right: -205px;
+            }
+            .t-wrap {
+              width: auto;
+            }
+          }
+        }
+        .line {
+          right: 15px;
+        }
+        .sub-section-inner {
+          flex-direction: row-reverse;
+          .info-wrap {
+            padding-right: 100px;
+            padding-left: 0;
+          }
+        }
+        .teacher {
+          left: 6%;
+        }
+      }
+      &.age1922 {
+        .img-wrap {
+          background-image: url(assets/1922-sub.jpeg);
+        }
+        .year-desc-wrap {
+          li:first-child {
+            &.active {
+              .new-progress {
+                border-left: 1px solid $color-main;
+              }
+            }
+          }
+        }
+      }
+      &.age1950 {
+        .img-wrap {
+          background-image: url(assets/1950-sub.jpeg);
+        }
+      }
+      &.age1970 {
+        .img-wrap {
+          background-image: url(assets/1970-sub.jpeg);
+        }
+      }
+      &.age1996 {
+        .img-wrap {
+          background-image: url(assets/1996-sub.jpeg);
+        }
+      }
+      &.age2009 {
+        .img-wrap {
+          background-image: url(assets/2009-sub.jpeg);
+        }
+      }
+      &.age2011 {
+        .img-wrap {
+          background-image: url(assets/2011-sub.jpeg);
+        }
+      }
+      &.age2016 {
+        .img-wrap {
+          background-image: url(assets/2016-sub.jpeg);
+        }
+      }
+      &.age2022 {
+        .img-wrap {
+          background-image: url(assets/2022-sub.jpeg);
+        }
+      }
+      .sub-section-inner {
+        display: flex;
+        position: relative;
+      }
+      .img-wrap {
+        width: 40%;
+        height: calc(100vh - 110px);
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 bottom;
+        word-break: keep-all;
+        word-wrap: break-word;
+        .title-area {
+          width: 100%;
+          position: relative;
+        }
+        .img-title {
+          font-size: 14rem;
+          color: #fff;
+          font-family: 'LGSmHaSB', sans-serif;
+        }
+        .img-desc {
+          padding-left: 10px;
+          font-size: 28px;
+          color: #fff;
+          line-height: 1.5;
+          font-family: 'LGSmHaSB', sans-serif;
+          word-wrap: break-word;
+          word-break: keep-all;
+        }
+      }
+      .info-wrap {
+        position: relative;
+        padding-top: 150px;
+        padding-left: 100px;
+        width: 60%;
+        box-sizing: border-box;
+        height: 100%;
+        .scrollbar-outer {
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+        }
+        .scrollbar-inner {
+          position: relative;
+          width: 100%;
+          padding: 15px 15px;
+          /* margin-bottom: 500px; */
+          height: 100%;
+          box-sizing: border-box;
+          display: flex;
+        }
+      }
+      .line {
+        width: 1px;
+        height: 100%;
+        background-color: #fff;
+        display: block;
+        position: absolute;
+        bottom: 0;
+      }
+      .teacher {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        text-align: center;
+        top: 150px;
+        width: 300px;
+        img {
+          margin-bottom: 20px;
+        };
+        div.teacher-name {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 2em;
+          letter-spacing: 1px;
+          border-radius: 10px 10px 10px 10px;
+          box-shadow: 0px 0px 2px 0px rgb(0 0 0 / 50%);
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@import "../responsive";
